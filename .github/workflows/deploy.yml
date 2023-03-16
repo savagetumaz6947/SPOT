@@ -13,10 +13,11 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
 
     steps:
-      - name: Show Files
-        run: ls -la
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
